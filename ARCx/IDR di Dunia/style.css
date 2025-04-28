@@ -343,8 +343,25 @@ body {
   height: 200px;
   color: rgb(255, 255, 255);
   text-align: center;
-  font-size: 15px;
   font-family: "Century Gothic";
+}
+
+@media (max-width: 800px) {
+  .footer {
+    height: 190px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    height: 175px;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer {
+    height: 160px;
+  }
 }
 
 .footer-sosmed {
@@ -355,24 +372,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-@media (max-width: 800px) {
-  .footer {
-    font-size: 13px;
-  }
-}
-
-@media (max-width: 600px) {
-  .footer {
-    font-size: 10px;
-  }
-}
-
-@media (max-width: 400px) {
-  .footer {
-    font-size: 8px;
-  }
 }
 
 .footer-sosmed a {
@@ -424,6 +423,24 @@ body {
   margin-bottom: 20px;
 }
 
+@media (max-width: 800px) {
+  .footer-links {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-links {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer-links {
+    font-size: 8px;
+  }
+}
+
 .footer-links a {
   color: rgb(255, 255, 255);
   text-decoration: none;
@@ -435,26 +452,26 @@ body {
   color: rgb(0, 187, 255);
 }
 
-.footer-copyright {
+p.footer-copyright {
   font-size: 14px;
   margin-top: 30px;
   color: #b0b0b0;
 }
 
 @media (max-width: 800px) {
-  .footer-copyright {
+  p.footer-copyright {
     font-size: 13px;
   }
 }
 
 @media (max-width: 600px) {
-  .footer-copyright {
+  p.footer-copyright {
     font-size: 10px;
   }
 }
 
 @media (max-width: 400px) {
-  .footer-copyright {
+  p.footer-copyright {
     font-size: 8px;
   }
 }
@@ -474,6 +491,7 @@ body {
 }
 
 .contents {
+  position: relative;
   margin-top: 50px;
   display: flex;
   justify-content: space-between;
@@ -499,9 +517,10 @@ body {
   align-items: center;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .contents {
     width: 70vw;
+    margin-top: 20px;
   }
   .contents div h4 {
     font-size: 15px;
@@ -514,6 +533,7 @@ body {
 @media (max-width: 600px) {
   .contents {
     width: 80vw;
+    margin-top: 15px;
   }
   .footer-copyright {
     font-size: 14px;
@@ -526,6 +546,7 @@ body {
 @media (max-width: 400px) {
   .contents {
     width: 85vw;
+    margin-top: 10px;
   }
   .contents div h4 {
     font-size: 13px;
@@ -607,7 +628,7 @@ body {
   flex-direction: column;
   justify-self: center;
   justify-content: space-evenly;
-  width: 60vw;
+  width: 100%;
 }
 
 .rows div {
