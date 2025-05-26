@@ -9,6 +9,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.7.0/css/flag-icons.min.css"
+    />
   </head>
   <body>
     <div class="header">
@@ -18,26 +22,103 @@
       </div>
       <div class="container">
         <div class="header2">
-          <a href="#" class="konversi">Konversi</a>
-          <a href="#" class="grafik active">Grafik</a>
+          <a href="#" class="konversi active">Konversi</a>
+          <a href="index2.html" class="grafik">Grafik</a>
         </div>
-        <div class="buttons">
-          <div class="country">
-            <div class="countryOp">
-              <div class="indicator"></div>
-              <button class="countrybut">
-                <i class="fas fa-chevron-down"></i>
+        <div class="container2">
+          <div class="jumlah">
+            <h3>Jumlah</h3>
+            <div class="bar">
+              <input type="text" class="inputval" />
+              <div class="changecountry">
+                <h5>USD</h5>
+                <div class="USDflag"></div>
+                <button class="countrybut" style="cursor: pointer">
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+              </div>
+            </div>
+            <div class="countrycontainer2">
+              <!--div countrycontainer initially tidak muncul, tetapi muncul ketika button class="countrybut" setelah diklik (berstatus "focus") kemudian hilang lagi ketika diklik (you get the idea)-->
+              <button style="cursor: pointer" class="butIDR">
+                <p>IDR</p>
+                <div class="IDRflag"></div>
+              </button>
+              <button style="cursor: pointer" class="butUSD">
+                <p>USD</p>
+                <div class="USDflag"></div>
+              </button>
+              <button style="cursor: pointer" class="butEUR">
+                <p>EUR</p>
+                <div class="EURflag"></div>
+              </button>
+              <button style="cursor: pointer" class="butCNY">
+                <p>CNY</p>
+                <div class="CNYflag"></div>
+              </button>
+              <button style="cursor: pointer" class="butJPY">
+                <p>JPY</p>
+                <div class="JPYflag"></div>
+              </button>
+              <button style="cursor: pointer" class="butSGD">
+                <p>SGD</p>
+                <div class="SGDflag"></div>
+              </button>
+              <button style="cursor: pointer" class="butMYR">
+                <p>MYR</p>
+                <div class="MYRflag"></div>
               </button>
             </div>
-            <div class="keRupiah">ke Rupiah</div>
           </div>
-          <nav class="nav">
-            <button>30H</button>
-            <button>90H</button>
-            <button>1T</button>
-          </nav>
+          <button style="cursor: pointer" class="arrow">
+            <i class="fas fa-arrows-alt-h"></i>
+          </button>
+          <div class="dikonversi">
+            <h3>Dikonversi</h3>
+            <div class="bar2" contenteditable="false">
+              <div class="changecountry">
+                <button class="countrybut" style="cursor: pointer">
+                  <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="USDflag"></div>
+                <h5>USD</h5>
+              </div>
+              <div class="outputval">real-time output disini</div>
+            </div>
+            <div class="countrycontainer3">
+              <!--div countrycontainer initially tidak muncul, tetapi muncul ketika button class="countrybut" setelah diklik (berstatus "focus") kemudian hilang lagi ketika diklik (you get the idea)-->
+              <button style="cursor: pointer" class="butIDR">
+                <div class="IDRflag"></div>
+                <p>IDR</p>
+              </button>
+              <button style="cursor: pointer" class="butUSD">
+                <div class="USDflag"></div>
+                <p>USD</p>
+              </button>
+              <button style="cursor: pointer" class="butEUR">
+                <div class="EURflag"></div>
+                <p>EUR</p>
+              </button>
+              <button style="cursor: pointer" class="butCNY">
+                <div class="CNYflag"></div>
+                <p>CNY</p>
+              </button>
+              <button style="cursor: pointer" class="butJPY">
+                <div class="JPYflag"></div>
+                <p>JPY</p>
+              </button>
+              <button style="cursor: pointer" class="butSGD">
+                <div class="SGDflag"></div>
+                <p>SGD</p>
+              </button>
+              <button style="cursor: pointer" class="butMYR">
+                <div class="MYRflag"></div>
+                <p>MYR</p>
+              </button>
+            </div>
+          </div>
         </div>
-        <div class="graph">// tempat buat grafik</div>
+        <div class="exchange">$1 USD = Rp20.000,00 IDR</div>
       </div>
     </div>
     <div class="mid">
@@ -54,6 +135,7 @@
         </div>
         <div class="tingkat">
           <h4>Tingkat Kenaikan</h4>
+          <!--nilai tingkat1 didapat dari kalkukasi API-->
           <h5>tingkat1</h5>
           <h5>tingkat1</h5>
           <h5>tingkat1</h5>
@@ -63,6 +145,7 @@
         </div>
         <div class="perubahan">
           <h4>Perubahan</h4>
+          <!--fas fa-caret-up/down bergantung dari API dengan kurang dari 1 maka down jika di atas 1 maka up-->
           <i class="fas fa-caret-up"></i>
           <i class="fas fa-caret-down"></i>
           <i class="fas fa-caret-up"></i>
@@ -100,5 +183,6 @@
         085552223334.
       </p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
