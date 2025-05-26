@@ -483,6 +483,16 @@ body {
   transition: 0.1s;
 }
 
+.activeop:hover {
+  background-color: rgba(0, 166, 255, 0.94);
+  color: white;
+}
+
+.activeop:focus {
+  background-color: rgba(0, 166, 255, 0.94);
+  color: white;
+}
+
 @media (max-width: 800px) {
   .nav button {
     font-size: 17px;
@@ -499,16 +509,6 @@ body {
   .nav button {
     font-size: 14px;
   }
-}
-
-.nav button:hover {
-  background-color: rgba(0, 166, 255, 0.94);
-  color: white;
-}
-
-.nav button:focus {
-  background-color: rgba(0, 166, 255, 0.94);
-  color: white;
 }
 
 .footer {
