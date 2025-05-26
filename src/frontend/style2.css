@@ -46,9 +46,6 @@ body {
 }
 
 @media (max-width: 800px) {
-  body {
-    overflow-x: hidden;
-  }
   .title h1 {
     font-size: 35px;
   }
@@ -59,9 +56,6 @@ body {
 }
 
 @media (max-width: 600px) {
-  body {
-    overflow-x: hidden;
-  }
   .title {
     top: 50px;
   }
@@ -146,9 +140,6 @@ body {
 }
 
 @media (max-width: 800px) {
-  body {
-    overflow-x: hidden;
-  }
   .konversi {
     font-size: 18px;
   }
@@ -158,9 +149,6 @@ body {
 }
 
 @media (max-width: 600px) {
-  body {
-    overflow-x: hidden;
-  }
   .konversi {
     font-size: 15px;
   }
@@ -381,9 +369,6 @@ body {
   .country {
     transform: translateX(-150px);
   }
-  body {
-    overflow-x: hidden;
-  }
 }
 
 @media (max-width: 600px) {
@@ -421,9 +406,6 @@ body {
     width: 14px;
     height: 14px;
   }
-  body {
-    overflow-x: hidden;
-  }
 }
 
 @media (max-width: 400px) {
@@ -457,9 +439,6 @@ body {
   .activecountry div {
     width: 13px;
     height: 13px;
-  }
-  body {
-    overflow-x: hidden;
   }
 }
 
