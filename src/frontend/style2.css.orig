@@ -185,7 +185,11 @@ body {
   border-style: solid;
   border-width: 3px 0px 3px 3px;
   border-color: rgba(0, 166, 255, 0.94);
+<<<<<<< HEAD
+  width: 60px;
+=======
   width: 70px;
+>>>>>>> f6050b806b7f83d170cc0cd3ed2365978c92e31e
   height: 24px;
   border-radius: 10px 0px 0px 10px;
 }
@@ -208,8 +212,10 @@ body {
 }
 
 .countrycontainer {
-  background-color: rgba(0, 166, 255, 0.94);
-  width: 100px;
+<<<<<<< HEAD
+  background-color: rgb(255, 255, 255);
+
+  width: 90px;
   height: 200px;
   position: relative;
   top: 35px;
@@ -229,12 +235,16 @@ body {
   box-shadow: 1px 1px 3px 1px silver;
 }
 
+<<<<<<< HEAD
+.countrycontainer button {
+=======
 .countrycontainer button p {
   color: white;
 }
 
 .countrycontainer button,
 .selected-display {
+>>>>>>> f6050b806b7f83d170cc0cd3ed2365978c92e31e
   height: 30px;
   width: 100%;
   margin: 0px;
