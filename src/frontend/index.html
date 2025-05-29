@@ -9,6 +9,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.7.0/css/flag-icons.min.css"
+    />
   </head>
   <body>
     <div class="header">
@@ -18,26 +22,23 @@
       </div>
       <div class="container">
         <div class="header2">
-          <a href="#" class="konversi">Konversi</a>
-          <a href="#" class="grafik active">Grafik</a>
+          <a href="#" class="konversi active">Konversi</a>
+          <a href="index2.html" class="grafik">Grafik</a>
         </div>
-        <div class="buttons">
-          <div class="country">
-            <div class="countryOp">
-              <div class="indicator"></div>
-              <button class="countrybut">
-                <i class="fas fa-chevron-down"></i>
-              </button>
-            </div>
-            <div class="keRupiah">ke Rupiah</div>
+        <div class="container2">
+          <div class="indicator">
+            <h3>Jumlah</h3>
+            <h3>Dikonversi</h3>
           </div>
-          <nav class="nav">
-            <button>30H</button>
-            <button>90H</button>
-            <button>1T</button>
-          </nav>
+          <div class="converts">
+            <div class="jumlah" contenteditable="true"></div>
+            <button style="cursor: pointer" class="arrow">
+              <i class="fas fa-arrows-alt-h"></i>
+            </button>
+            <div class="dikonversi" contenteditable="true"></div>
+          </div>
+          <div class="exchange"></div>
         </div>
-        <div class="graph">// tempat buat grafik</div>
       </div>
     </div>
     <div class="mid">
@@ -54,6 +55,7 @@
         </div>
         <div class="tingkat">
           <h4>Tingkat Kenaikan</h4>
+          <!--nilai tingkat1 didapat dari kalkukasi API-->
           <h5>tingkat1</h5>
           <h5>tingkat1</h5>
           <h5>tingkat1</h5>
@@ -63,6 +65,7 @@
         </div>
         <div class="perubahan">
           <h4>Perubahan</h4>
+          <!--fas fa-caret-up/down bergantung dari API dengan kurang dari 1 maka down jika di atas 1 maka up-->
           <i class="fas fa-caret-up"></i>
           <i class="fas fa-caret-down"></i>
           <i class="fas fa-caret-up"></i>
@@ -100,5 +103,6 @@
         085552223334.
       </p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

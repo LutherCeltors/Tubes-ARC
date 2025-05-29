@@ -72,89 +72,12 @@ body {
 .container {
   background-color: rgb(255, 255, 255);
   width: 80vw;
-  height: 400px;
+  height: 500px;
   position: absolute;
   top: 150px;
   border-radius: 30px;
   box-shadow: 0px 5px 10px 2px gray;
 }
-
-.container2 {
-  margin-top: 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.indicator {
-  display: flex;
-  justify-content: center;
-  gap: 540px;
-}
-
-.indicator h3 {
-  font-family: "Century Gothic";
-  color: rgb(74, 97, 130);
-  transform: translateX(-210px);
-}
-
-.converts {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-
-.jumlah {
-  border-style: solid;
-  border-color: rgb(44, 44, 44);
-  border-width: 2px;
-  border-radius: 10px;
-  width: 500px;
-  height: 40px;
-  display: flex;
-  padding-left: 20px;
-  align-items: center;
-  font-size: 20px;
-  font-family: "Century Gothic";
-  color: black;
-}
-
-.arrow {
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-  background-color: rgba(255, 255, 255, 0.94);
-  border: none;
-  color: rgba(0, 166, 255, 0.94);
-  transition: 0.1s;
-  border-radius: 10px;
-}
-
-.arrow:hover,
-.arrow:focus {
-  background-color: rgba(0, 166, 255, 0.94);
-  color: rgba(255, 255, 255, 0.94);
-}
-
-.dikonversi {
-  border-style: solid;
-  border-color: rgb(44, 44, 44);
-  border-width: 2px;
-  border-radius: 10px;
-  width: 500px;
-  height: 40px;
-  display: flex;
-  padding-left: 20px;
-  align-items: center;
-  font-size: 20px;
-  font-family: "Century Gothic";
-  color: black;
-}
-
 .mid {
   background-color: rgb(255, 255, 255);
   width: 100vw;
@@ -200,8 +123,8 @@ body {
   padding-left: 5%;
 }
 
-.grafik:hover,
-.konversi:hover {
+.konversi:hover,
+.grafik:hover {
   font-weight: bold;
   color: black;
 }
@@ -211,7 +134,7 @@ body {
   color: black;
 }
 
-.grafik:hover ~ .konversi {
+.konversi:hover ~ .grafik {
   font-weight: lighter;
   color: rgb(112, 112, 112);
 }
@@ -232,6 +155,246 @@ body {
   .grafik {
     font-size: 15px;
   }
+}
+
+.buttons {
+  width: 100%;
+  padding-top: 15px;
+  height: 30px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40%;
+}
+
+.country {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.countryOp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.indicator {
+  border-style: solid;
+  border-width: 3px 0px 3px 3px;
+  border-color: rgba(0, 166, 255, 0.94);
+  width: 60px;
+  height: 24px;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.countrybut {
+  border-style: solid;
+  background-color: rgba(0, 166, 255, 0.94);
+  border-width: 3px 3px 3px 0px;
+  border-color: rgba(0, 166, 255, 0.94);
+  width: 30px;
+  height: 28.8px;
+  border-radius: 0px 10px 10px 0px;
+  color: white;
+  transition: 0.1s;
+}
+
+.countrybut:hover {
+  background-color: rgba(0, 130, 200, 0.94);
+  border-color: rgba(0, 130, 200, 0.94);
+}
+
+.countrycontainer {
+  background-color: rgb(255, 255, 255);
+
+  width: 90px;
+  height: 200px;
+  position: relative;
+  top: 35px;
+  left: -1.5px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 1px 1px 3px 1px silver;
+}
+
+.countrycontainer button {
+  height: 30px;
+  width: 100%;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  background-color: transparent;
+  font-family: "Century Gothic";
+  font-weight: lighter;
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+}
+
+.countrycontainer button:hover {
+  background-color: rgb(242, 242, 242);
+}
+
+.countrycontainer img {
+  width: 20px;
+  height: 14px;
+  object-fit: cover;
+}
+
+.keRupiah {
+  color: rgb(74, 97, 130);
+  font-family: "Century Gothic";
+  font-weight: bold;
+  font-size: 20px;
+}
+
+@media (max-width: 900px) {
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .country {
+    transform: translateX(-200px);
+  }
+  .keRupiah {
+    font-size: 18px;
+  }
+  .indicator {
+    height: 22px;
+    width: 45px;
+  }
+  .countrybut {
+    height: 26.8px;
+    width: 20px;
+    font-size: 10px;
+  }
+  .countrycontainer {
+    width: 65px;
+  }
+  .countrycontainer button {
+    font-size: 14px;
+    gap: 9px;
+  }
+}
+
+@media (max-width: 700px) {
+  .country {
+    transform: translateX(-150px);
+  }
+}
+
+@media (max-width: 600px) {
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .country {
+    transform: translateX(-75px);
+  }
+  .keRupiah {
+    font-size: 15px;
+  }
+  .indicator {
+    height: 18px;
+    width: 40px;
+  }
+  .countrybut {
+    height: 22.8px;
+    width: 20px;
+    font-size: 10px;
+  }
+  .countrycontainer {
+    width: 60px;
+  }
+  .countrycontainer button {
+    font-size: 12px;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 400px) {
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .country {
+    transform: translateX(-60px);
+  }
+  .keRupiah {
+    font-size: 14px;
+  }
+  .indicator {
+    height: 18px;
+    width: 40px;
+  }
+  .countrybut {
+    height: 22.8px;
+    width: 20px;
+    font-size: 9px;
+  }
+  .countrycontainer button {
+    font-size: 11px;
+    gap: 5px;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.nav button {
+  width: 4vw;
+  height: 35px;
+  background-color: transparent;
+  border: none;
+  border-radius: 999px;
+  color: rgb(74, 97, 130);
+  font-family: "Century Gothic";
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.1s;
+}
+
+@media (max-width: 800px) {
+  .nav button {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav button {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .nav button {
+    font-size: 14px;
+  }
+}
+
+.nav button:hover {
+  background-color: rgba(0, 166, 255, 0.94);
+  color: white;
+}
+
+.nav button:focus {
+  background-color: rgba(0, 166, 255, 0.94);
+  color: white;
 }
 
 .footer {
