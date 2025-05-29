@@ -212,14 +212,7 @@ body {
   width: 100px;
   height: 200px;
   position: relative;
-  top: 35px;
-=======
-  background-color: rgba(0, 166, 255, 0.94);
-  width: 100px;
-  height: 200px;
-  position: relative;
   top: 10px;
->>>>>>> f6050b806b7f83d170cc0cd3ed2365978c92e31e
   left: -1.5px;
   border-radius: 10px;
   display: flex;
@@ -251,11 +244,7 @@ body {
 }
 
 .countrycontainer button:hover {
-<<<<<<< HEAD
-  background-color: rgb(242, 242, 242);
-=======
   background-color: rgba(0, 161, 248, 0.94);
->>>>>>> f6050b806b7f83d170cc0cd3ed2365978c92e31e
 }
 
 .countrycontainer img {
@@ -264,8 +253,6 @@ body {
   object-fit: cover;
 }
 
-<<<<<<< HEAD
-=======
 .activecountry {
   display: flex;
   justify-self: center;
@@ -334,7 +321,6 @@ body {
   height: 19px;
 }
 
->>>>>>> f6050b806b7f83d170cc0cd3ed2365978c92e31e
 .keRupiah {
   color: rgb(74, 97, 130);
   font-family: "Century Gothic";
@@ -356,11 +342,7 @@ body {
   }
   .indicator {
     height: 22px;
-<<<<<<< HEAD
-    width: 45px;
-=======
     width: 55px;
->>>>>>> f6050b806b7f83d170cc0cd3ed2365978c92e31e
   }
   .countrybut {
     height: 26.8px;
@@ -368,21 +350,12 @@ body {
     font-size: 10px;
   }
   .countrycontainer {
-<<<<<<< HEAD
-    width: 65px;
-=======
     width: 75px;
->>>>>>> f6050b806b7f83d170cc0cd3ed2365978c92e31e
   }
   .countrycontainer button {
     font-size: 14px;
     gap: 9px;
   }
-<<<<<<< HEAD
-}
-
-@media (max-width: 700px) {
-=======
   .activecountry h5 {
     font-size: 13px;
   }
@@ -393,7 +366,6 @@ body {
 }
 
 @media (max-width: 750px) {
->>>>>>> f6050b806b7f83d170cc0cd3ed2365978c92e31e
   .country {
     transform: translateX(-150px);
   }
@@ -413,11 +385,7 @@ body {
   }
   .indicator {
     height: 18px;
-<<<<<<< HEAD
-    width: 40px;
-=======
     width: 50px;
->>>>>>> f6050b806b7f83d170cc0cd3ed2365978c92e31e
   }
   .countrybut {
     height: 22.8px;
@@ -425,18 +393,12 @@ body {
     font-size: 10px;
   }
   .countrycontainer {
-<<<<<<< HEAD
-    width: 60px;
-=======
     width: 70px;
->>>>>>> f6050b806b7f83d170cc0cd3ed2365978c92e31e
   }
   .countrycontainer button {
     font-size: 12px;
     gap: 6px;
   }
-<<<<<<< HEAD
-=======
   .activecountry h5 {
     font-size: 11px;
   }
@@ -444,7 +406,6 @@ body {
     width: 14px;
     height: 14px;
   }
->>>>>>> f6050b806b7f83d170cc0cd3ed2365978c92e31e
 }
 
 @media (max-width: 400px) {
@@ -461,11 +422,7 @@ body {
   }
   .indicator {
     height: 18px;
-<<<<<<< HEAD
-    width: 40px;
-=======
     width: 50px;
->>>>>>> f6050b806b7f83d170cc0cd3ed2365978c92e31e
   }
   .countrybut {
     height: 22.8px;
@@ -476,8 +433,6 @@ body {
     font-size: 11px;
     gap: 5px;
   }
-<<<<<<< HEAD
-=======
   .activecountry h5 {
     font-size: 10px;
   }
@@ -485,7 +440,6 @@ body {
     width: 13px;
     height: 13px;
   }
->>>>>>> f6050b806b7f83d170cc0cd3ed2365978c92e31e
 }
 
 .nav {
@@ -508,8 +462,6 @@ body {
   transition: 0.1s;
 }
 
-<<<<<<< HEAD
-=======
 .activeop:hover {
   background-color: rgba(0, 166, 255, 0.94);
   color: white;
@@ -520,7 +472,6 @@ body {
   color: white;
 }
 
->>>>>>> f6050b806b7f83d170cc0cd3ed2365978c92e31e
 @media (max-width: 800px) {
   .nav button {
     font-size: 17px;
@@ -539,19 +490,6 @@ body {
   }
 }
 
-<<<<<<< HEAD
-.nav button:hover {
-  background-color: rgba(0, 166, 255, 0.94);
-  color: white;
-}
-
-.nav button:focus {
-  background-color: rgba(0, 166, 255, 0.94);
-  color: white;
-}
-
-=======
->>>>>>> f6050b806b7f83d170cc0cd3ed2365978c92e31e
 .footer {
   background-color: rgb(15, 15, 15);
   width: 100vw;
