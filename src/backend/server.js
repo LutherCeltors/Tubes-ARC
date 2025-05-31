@@ -166,6 +166,7 @@ app.get('/api/convert', async (req, res) => {
 });
 
 app.get('/api/chart', async (req, res) => {
+    
   const { fromCurr = "USD", toCurr = "IDR", range = "1M" } = req.query;
 
   const today = new Date();
