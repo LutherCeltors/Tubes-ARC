@@ -2,17 +2,18 @@ const express = require('express');
 const bodyParser = require('body-parser'); 
 const app = express();
 const cors = require('cors');
+const path = require('path');
 const PORT = 5000; 
 const currencyConverter = require('./currencyConverter'); 
 
 app.use(cors());
 app.use(bodyParser.json()); 
+app.use('/', express.static(path.join(__dirname, "../frontend")))
 app.use(bodyParser.urlencoded({ extended: true })); 
 
 app.use(logger);
 
 app.get("/", (req, res) =>{
-    res.send("Hello This is your first page!")
     console.log("First Page")
 });
 
