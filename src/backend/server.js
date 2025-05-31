@@ -164,3 +164,36 @@ app.get('/api/convert', async (req, res) => {
     res.status(500).json({ error: error.message || 'Terjadi kesalahan server saat konversi.' });
   }
 });
+
+app.get('/api/chart', async (req, res) => {
+    
+  const { fromCurr = "USD", toCurr = "IDR", range = "1M" } = req.query;
+
+  const today = new Date();
+  const end = today.toISOString().split("T")[0];
+
+  const startDate = new Date();
+  switch (range) {
+    case "1W": startDate.setDate(today.getDate() - 7); break;
+    case "1M": startDate.setMonth(today.getMonth() - 1); break;
+    case "3M": startDate.setMonth(today.getMonth() - 3); break;
+    case "6M": startDate.setMonth(today.getMonth() - 6); break;
+    case "1Y": startDate.setFullYear(today.getFullYear() - 1); break;
+    default: startDate.setMonth(today.getMonth() - 1); break;
+  }
+  const start = startDate.toISOString().split("T")[0];
+
+  try {
+    const url = `https://api.frankfurter.app/${start}..${end}?base=${fromCurr}&symbols=${toCurr}`;
+    const response = await fetch(url);
+    const json = await response.json();
+
+    const labels = Object.keys(json.rates);
+    const values = labels.map(date => json.rates[date][toCurr]);
+
+    res.json({ labels, values });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Gagal mengambil data grafik." });
+  }
+});

@@ -791,3 +791,18 @@ p.footer-copyright {
   border-color: rgb(226, 226, 226);
   border-width: 0px 0px 2px 0px;
 }
+
+.graph {
+  width: 100%;
+  max-width: 100%;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+.graph canvas {
+  width: 100% !important;
+  height: 300px !important;
+  max-width: 85%;  /* Menyesuaikan kelebaran grafik */
+  margin: 0 auto;  /* Agar canvas tetap di tengah */
+  display: block;
+}
