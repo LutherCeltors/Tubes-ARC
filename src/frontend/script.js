@@ -47,17 +47,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const currency = button.querySelector("p").textContent;
         const flagClass = button.querySelector("div").className;
 
-<<<<<<< HEAD
         if(activeTextPage2) activeTextPage2.textContent = currency;
         if(activeFlagPage2) activeFlagPage2.className = flagClass;
         countryContainerPage2.style.display = "none";
-=======
-        activeText.textContent = currency;
-        activeFlag.className = flagClass;
-        countryContainer.style.display = "none";
-
-        fetchConversionRate();
->>>>>>> 708dfb97edd2e238b3ec435c7c3be67543408f38
       });
     });
 
@@ -116,12 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
         h5.textContent = currency;
         flag.className = flagClass; 
         container.style.display = "none";
-<<<<<<< HEAD
         processAndDisplayConversion(); 
-=======
-
-        fetchConversionRate(); //otomasi konversi saat pengubahan mata uang
->>>>>>> 708dfb97edd2e238b3ec435c7c3be67543408f38
       });
     });
 
@@ -153,7 +140,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const tempClass = leftFlag.className;
       leftFlag.className = rightFlag.className;
       rightFlag.className = tempClass;
-<<<<<<< HEAD
       
       processAndDisplayConversion(); 
     });
@@ -345,47 +331,3 @@ async function initializeConverterPageIndexHTML() {
     processAndDisplayConversion();
   }
 }
-=======
-
-      //Swap input konversi dengan output
-      const outputText = document.querySelector('.outputval').textContent;
-      const outputAmount = parseFloat(outputText.split(" ")[0]);
-      if (!isNaN(outputAmount)){
-        document.querySelector('.inputval').value = outputAmount;
-      }
-      
-      fetchConversionRate(); //otomasi konversi setiap kali terjadi swap
-    });
-  }
-
-  //Listener untuk input dan output terkhusus konversi mata uang.
-  const inputField = document.querySelector('.inputval');
-  if (inputField) {
-    inputField.addEventListener('input', fetchConversionRate);
-  }
-
-  function fetchConversionRate() {
-    const amount = parseFloat(document.querySelector('.inputval').value);
-    const from = document.querySelector('.jumlah .changecountry h5').textContent;
-    const to = document.querySelector('.dikonversi .changecountry h5').textContent;
-
-    if (isNaN(amount) || amount <= 0) {
-      document.querySelector('.outputval').textContent = '';
-      return;
-    }
-
-    fetch(`/api/conversion?fromCurr=${from}&toCurr=${to}`)
-      .then(res => res.json())
-      .then(data => {
-        const rate = data.rate;
-        const converted = amount * rate;
-        document.querySelector('.outputval').textContent = `${converted.toFixed(2)} ${to}`;
-      })
-      .catch(err => {
-        console.error('Conversion failed:', err);
-        document.querySelector('.outputval').textContent = 'Error';
-      });
-  }
-});
-
->>>>>>> 708dfb97edd2e238b3ec435c7c3be67543408f38
