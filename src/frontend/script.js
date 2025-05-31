@@ -49,6 +49,8 @@ document.addEventListener("DOMContentLoaded", function () {
         activeText.textContent = currency;
         activeFlag.className = flagClass;
         countryContainer.style.display = "none";
+
+        fetchConversionRate();//menambahkan otomasi setiap kali terjadi pergantian mata uang.
       });
     });
 
@@ -130,6 +132,46 @@ document.addEventListener("DOMContentLoaded", function () {
       const tempClass = leftFlag.className;
       leftFlag.className = rightFlag.className;
       rightFlag.className = tempClass;
+
+      //Swap input konversi dengan output
+      const outputText = document.querySelector('.outputval');
+      const outputAmount = parseFloat(outputText.split(" ")[0]);
+      if (!isNan(outputAmount)){
+        document.querySelector('.input').textContent = outputAmount;
+      }
+
+
+      fetchConversionRate(); //otomasi konversi setiap kali terjadi swap
     });
   }
+
+  //Listener untuk input dan output terkhusus konversi mata uang.
+  const inputField = document.querySelector('.inputval');
+  if (inputField) {
+    inputField.addEventListener('input', fetchConversionRate);
+  }
+
+  function fetchConversionRate() {
+    const amount = parseFloat(document.querySelector('.inputval').value);
+    const from = document.querySelector('.jumlah .changecountry h5').textContent;
+    const to = document.querySelector('.dikonversi .changecountry h5').textContent;
+
+    if (isNaN(amount) || amount <= 0) {
+      document.querySelector('.outputval').textContent = '';
+      return;
+    }
+
+    fetch(`/api/conversion?fromCurr=${from}&toCurr=${to}`)
+      .then(res => res.json())
+      .then(data => {
+        const rate = data.rate;
+        const converted = amount * rate;
+        document.querySelector('.outputval').textContent = `${converted.toFixed(2)} ${to}`;
+      })
+      .catch(err => {
+        console.error('Conversion failed:', err);
+        document.querySelector('.outputval').textContent = 'Error';
+      });
+  }
 });
+
