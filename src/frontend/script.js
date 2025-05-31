@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
         activeFlag.className = flagClass;
         countryContainer.style.display = "none";
 
-        fetchConversionRate();//menambahkan otomasi setiap kali terjadi pergantian mata uang.
+        fetchConversionRate();
       });
     });
 
@@ -94,6 +94,8 @@ document.addEventListener("DOMContentLoaded", function () {
         h5.textContent = currency;
         flag.className = flagClass;
         container.style.display = "none";
+
+        fetchConversionRate(); //otomasi konversi saat pengubahan mata uang
       });
     });
 
@@ -134,13 +136,12 @@ document.addEventListener("DOMContentLoaded", function () {
       rightFlag.className = tempClass;
 
       //Swap input konversi dengan output
-      const outputText = document.querySelector('.outputval');
+      const outputText = document.querySelector('.outputval').textContent;
       const outputAmount = parseFloat(outputText.split(" ")[0]);
-      if (!isNan(outputAmount)){
-        document.querySelector('.input').textContent = outputAmount;
+      if (!isNaN(outputAmount)){
+        document.querySelector('.inputval').value = outputAmount;
       }
-
-
+      
       fetchConversionRate(); //otomasi konversi setiap kali terjadi swap
     });
   }
