@@ -166,7 +166,6 @@ app.get('/api/convert', async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
 app.get('/api/updownratio7day', async (req, res) =>{
   const {targetCurrency} = req.query;
 
@@ -192,9 +191,6 @@ app.get('/api/updownratio7day', async (req, res) =>{
   }
 })
 
-app.listen(PORT, () =>{
-    console.log(`Server is running at http://localhost:${PORT}`)
-=======
 app.get('/api/chart', async (req, res) => {
     
   const { fromCurr = "USD", toCurr = "IDR", range = "1M" } = req.query;
@@ -226,5 +222,8 @@ app.get('/api/chart', async (req, res) => {
     console.error(err);
     res.status(500).json({ error: "Gagal mengambil data grafik." });
   }
->>>>>>> 6ba9911a6c04010bb006f9b84fa96dc46f912ccb
 });
+
+app.listen(PORT, () =>{
+    console.log(`Server is running at http://localhost:${PORT}`)
+})
