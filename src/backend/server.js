@@ -6,6 +6,7 @@ const path = require('path');
 const PORT = 5000;
 const currencyConverter = require('./currencyConverter'); 
 const compareHistoricalPast7day = require('./updownIDRratio');
+const compareHistoricalPeriod = require('./updownIDRratio');
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -187,6 +188,30 @@ app.get('/api/updownratio7day', async (req, res) =>{
   }
 })
 
+app.get("/api/updownratio_period", async(req, res) => {
+  const {targetCurrency, period} = req.query;
+ if (!targetCurrency) {
+    return res.status(400).json({ error: 'Parameter "targetCurrency" diperlukan.' });
+  }
+  try {
+    const result = await compareHistoricalPeriod(targetCurrency, period);
+    if (!result){
+      console.log("Tidak didapatkah hasil dari compareHistorical7PastDay.")
+    } else {
+      res.json({
+        targetCurrency: targetCurrency,
+        baseCurrency: 'IDR',
+        todayRatio: result.todayRate,
+        pastRatio: result.pastRate,
+        percentChange: result.percentChange
+      })
+    }
+  } catch(error){
+    console.error('Error di api/updownratio7day', error.message)
+    res.status(500).json({error : 'Terjadi kesalahan server.'})
+  }
+})
+
 app.get('/api/chart', async (req, res) => {
     
   const { fromCurr = "USD", toCurr = "IDR", range = "1M" } = req.query;
@@ -219,6 +244,7 @@ app.get('/api/chart', async (req, res) => {
     res.status(500).json({ error: "Gagal mengambil data grafik." });
   }
 });
+
 
 app.listen(PORT, () =>{
     console.log(`Server is running at http://localhost:${PORT}`)
