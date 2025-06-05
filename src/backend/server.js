@@ -28,10 +28,6 @@ app.get("/konversi", (req, res) =>{
     console.log("konversi")
 });
 
-app.listen(PORT, () =>{
-    console.log(`Server is running at http://localhost:${PORT}`)
-});
-
 function logger(req, res, next){
     console.log(req.originalUrl)
     next()
