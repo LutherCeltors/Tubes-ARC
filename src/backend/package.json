@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "��R\u0000e\u0000a\u0000d\u0000m\u0000e\u0000\r\u0000 \u0000",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
