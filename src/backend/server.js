@@ -3,12 +3,13 @@ const bodyParser = require('body-parser');
 const app = express();
 const cors = require('cors');
 const path = require('path');
-const PORT = 5000; 
+const PORT = 5000;
 const currencyConverter = require('./currencyConverter'); 
+const compareHistoricalPast7day = require('./updownIDRratio');
 
 app.use(cors());
-app.use(bodyParser.json()); 
-app.use('/', express.static(path.join(__dirname, "../frontend")))
+app.use(bodyParser.json());
+app.use('/', express.static(path.join(__dirname, "../frontend")));
 app.use(bodyParser.urlencoded({ extended: true })); 
 
 app.use(logger);
@@ -25,10 +26,6 @@ app.get("/grafik", (req, res) =>{
 app.get("/konversi", (req, res) =>{
     res.send("konversi")
     console.log("konversi")
-});
-
-app.listen(PORT, () =>{
-    console.log(`Server is running at http://localhost:${PORT}`)
 });
 
 function logger(req, res, next){
@@ -163,4 +160,33 @@ app.get('/api/convert', async (req, res) => {
     console.error(`Error di endpoint /api/convert (${fromCurrency} ke ${toCurrency}):`, error);
     res.status(500).json({ error: error.message || 'Terjadi kesalahan server saat konversi.' });
   }
+});
+
+app.get('/api/updownratio7day', async (req, res) =>{
+  const {targetCurrency} = req.query;
+
+  if (!targetCurrency) {
+    return res.status(400).json({ error: 'Parameter "targetCurrency" diperlukan.' });
+  }
+  try {
+    const result = await compareHistoricalPast7day(targetCurrency);
+    if (!result){
+      console.log("Tidak didapatkah hasil dari compareHistorical7PastDay.")
+    } else {
+      res.json({
+        targetCurrency: targetCurrency,
+        baseCurrency: 'IDR',
+        todayRatio: result.todayRate,
+        pastRatio: result.pastRate,
+        percentChange: result.percentChange
+      })
+    }
+  } catch(error){
+    console.error('Error di api/updownratio7day', error.message)
+    res.status(500).json({error : 'Terjadi kesalahan server.'})
+  }
+})
+
+app.listen(PORT, () =>{
+    console.log(`Server is running at http://localhost:${PORT}`)
 });
