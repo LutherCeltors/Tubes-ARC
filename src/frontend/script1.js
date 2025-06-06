@@ -5,16 +5,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   for (let i = 0; i < baseCurrencies.length; i++) {
     const base = baseCurrencies[i];
+    console.log(`Currency = ${base}`);
 
     try {
-      const res = await fetch(`/api/updownratio7day?targetCurrency=${base}`);
-      console.log(`Currency = ${base}`);
+      const res = await fetch(`/api/updownratio_period?targetCurrency=${base}&period=7`);
       const data = await res.json();
 
       if (data && typeof data.percentChange === 'number') {
         const change = data.percentChange.toFixed(2);
 
-        // Update percentage text
         persenUbah[i].innerHTML = `${change}%`;
 
         if (data.percentChange > 0) {
