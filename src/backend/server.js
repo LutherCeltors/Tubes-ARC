@@ -163,31 +163,6 @@ app.get('/api/convert', async (req, res) => {
   }
 });
 
-app.get('/api/updownratio7day', async (req, res) =>{
-  const {targetCurrency} = req.query;
-
-  if (!targetCurrency) {
-    return res.status(400).json({ error: 'Parameter "targetCurrency" diperlukan.' });
-  }
-  try {
-    const result = await compareHistoricalPast7day(targetCurrency);
-    if (!result){
-      console.log("Tidak didapatkah hasil dari compareHistorical7PastDay.")
-    } else {
-      res.json({
-        targetCurrency: targetCurrency,
-        baseCurrency: 'IDR',
-        todayRatio: result.todayRate,
-        pastRatio: result.pastRate,
-        percentChange: result.percentChange
-      })
-    }
-  } catch(error){
-    console.error('Error di api/updownratio7day', error.message)
-    res.status(500).json({error : 'Terjadi kesalahan server.'})
-  }
-})
-
 app.get("/api/updownratio_period", async(req, res) => {
   const {targetCurrency, period} = req.query;
  if (!targetCurrency) {
