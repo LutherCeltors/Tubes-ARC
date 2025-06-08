@@ -28,8 +28,8 @@ Untuk menjalankan dan mengembangkan web ConvertIR secara lokal, berikut kebutuha
 1. Clone repository ini:
    ```bash
    git clone https://github.com/username/convertir.git
-   cd convertir
-   npm install
+   cd convertir/src/backend
+   npm install axios cors express nodemon
    npm start
 
 ### Menjalankan dari web
