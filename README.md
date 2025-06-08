@@ -15,10 +15,10 @@ ConvertIR merupakan proyek Tugas Besar dari ARC yang bertujuan untuk memberikan 
 ## ⚙️ Prerequisite untuk Menjalankan Web
 Untuk menjalankan dan mengembangkan web ConvertIR secara lokal, berikut kebutuhan yang harus dipenuhi:
 
-- Node.js (v14 ke atas direkomendasikan)
+- Node.js
 - Koneksi Internet (untuk fetch data dari API)
 - Web Browser (Google Chrome, Firefox, dll.)
-- [Optional] Text Editor seperti VS Code
+- IDE (VScode)
 
 ## 🚀 Cara Menjalankan dan Menggunakan
 
@@ -27,7 +27,8 @@ Untuk menjalankan dan mengembangkan web ConvertIR secara lokal, berikut kebutuha
    ```bash
    git clone https://github.com/username/convertir.git
    cd convertir
-
+   npm install
+   npm start
 
 ### Menjalankan dari web
 1. Akses versi online melalui https://convertirondev.netlify.app
