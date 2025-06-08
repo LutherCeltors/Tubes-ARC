@@ -30,7 +30,7 @@ async function loadUpDownRatio(){
         const data = await res.json();
 
         if (data && typeof data.percentChange === 'number') {
-            const change = data.percentChange.toFixed(2);
+            const change = data.percentChange.toFixed(4);
 
             // Update percentage text
             persenUbah[i].innerHTML = `${change}%`;
