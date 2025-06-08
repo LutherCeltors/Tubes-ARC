@@ -7,9 +7,9 @@
 |2|Marcel Luther Sitorus|13524063| 
 |3|Raymond Jonathan|13524059| 
 |4|Rezky Muhammad Hafiz Batubara|18224033|
-|4|Nathanael Shane Bennet|13524119|
-|4|Bram Sebastian Pangaribuan|18224076|
-|4|Richard Samuel Simanullang|13524071|
+|5|Nathanael Shane Bennet|13524119|
+|6|Bram Sebastian Pangaribuan|18224076|
+|7|Richard Samuel Simanullang|13524112|
 
 ## 📌 Latar Belakang Pembuatan Web
 ConvertIR merupakan proyek Tugas Besar dari ARC yang bertujuan untuk memberikan informasi tentang kondisi kekuatan mata uang Indonesia terhadap mata uang asing lainnya secara **realtime dan akurat**. Aplikasi ini diharapkan dapat membantu pengguna dalam memahami dinamika nilai tukar Rupiah, sekaligus memberikan gambaran terhadap kondisi ekonomi global.
